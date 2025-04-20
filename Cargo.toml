@@ -1,0 +1,24 @@
+[package]
+name = "stm32f103_tietou"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
+cortex-m-rt = "0.7.3"
+defmt = "1.0.1"
+defmt-rtt = "1.0.0"
+embedded-hal = "1.0.0"
+nb = "1.1.0"
+panic-halt = "0.2.0"
+# rtt-target = { version = "0.6.1", features = ["defmt"] }
+
+[dependencies.stm32f1xx-hal]
+version = "0.10.0"
+features = ["rt", "stm32f103", "medium"]
+
+[profile.release]
+debug = 2  # 必须设置为 2 或更高
+
+[profile.dev]
+debug = 2  # 开发环境也建议设置
