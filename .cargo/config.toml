@@ -10,3 +10,7 @@ rustflags = [
 
 [build]
 target = "thumbv7m-none-eabi"
+
+
+[env]
+DEFMT_LOG = "trace"
